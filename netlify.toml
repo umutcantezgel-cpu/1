@@ -155,16 +155,12 @@
 # PLUGINS
 # ========================================
 
-# Lighthouse Plugin für Performance-Checks
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
-  [plugins.inputs]
-    output_path = "reports/lighthouse.html"
-
-# A11y Plugin für Accessibility-Checks
-[[plugins]]
-  package = "@netlify/plugin-a11y"
+# Plugins können über das Netlify UI hinzugefügt werden:
+# - @netlify/plugin-lighthouse (Performance-Checks)
+# - @netlify/plugin-a11y (Accessibility-Checks)
+#
+# Alternativ via package.json:
+# npm install -D @netlify/plugin-lighthouse @netlify/plugin-a11y
 
 # ========================================
 # CONTEXT-SPECIFIC SETTINGS
