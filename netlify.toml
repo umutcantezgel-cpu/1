@@ -1,0 +1,205 @@
+# ========================================
+# NETLIFY BUILD CONFIGURATION
+# ========================================
+
+[build]
+  # Build-Kommando
+  command = "npm run build"
+
+  # Publish-Verzeichnis (anpassen je nach Framework)
+  publish = "dist"  # Für Vite
+  # publish = "build"  # Für Create React App
+
+  # Node Version
+  [build.environment]
+    NODE_VERSION = "18"
+    NPM_VERSION = "9"
+
+# ========================================
+# REDIRECTS & REWRITES (für SPA)
+# ========================================
+
+# Redirect alle Routen zu index.html (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+# Legacy URLs redirecten (Beispiel)
+[[redirects]]
+  from = "/old-services"
+  to = "/services"
+  status = 301
+
+# ========================================
+# HEADERS - Performance & Security
+# ========================================
+
+# Standard Headers für alle Seiten
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    # Security Headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Permissions Policy (Feature Policy)
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+    # Content Security Policy (CSP)
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      img-src 'self' data: https: blob:;
+      font-src 'self' https://fonts.gstatic.com;
+      connect-src 'self' https://www.google-analytics.com;
+      frame-src https://www.google.com;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      upgrade-insecure-requests;
+    """
+
+# Cache Headers für statische Assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache für JavaScript Bundles
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache für CSS
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache für Images (kürzer als JS/CSS da diese sich ändern können)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"  # 7 Tage
+
+# Cache für Fonts
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+# Service Worker
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# HTML Files - No Cache
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ========================================
+# BUILD PROCESSING (Asset Optimization)
+# ========================================
+
+[build.processing]
+  skip_processing = false
+
+# CSS Optimization
+[build.processing.css]
+  bundle = true
+  minify = true
+
+# JavaScript Optimization
+[build.processing.js]
+  bundle = true
+  minify = true
+
+# HTML Optimization
+[build.processing.html]
+  pretty_urls = true  # /about.html wird zu /about
+
+# Image Optimization
+[build.processing.images]
+  compress = true
+
+# ========================================
+# FORMS (Netlify Forms Integration)
+# ========================================
+
+# Netlify Forms automatisch erkennen
+[forms]
+  # Spam-Schutz mit Akismet
+  spam_filter = true
+
+# ========================================
+# FUNCTIONS (falls Serverless Functions genutzt werden)
+# ========================================
+
+[functions]
+  directory = "netlify/functions"
+  # Node Runtime
+  node_bundler = "esbuild"
+
+# ========================================
+# PLUGINS
+# ========================================
+
+# Lighthouse Plugin für Performance-Checks
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  [plugins.inputs]
+    output_path = "reports/lighthouse.html"
+
+# A11y Plugin für Accessibility-Checks
+[[plugins]]
+  package = "@netlify/plugin-a11y"
+
+# ========================================
+# CONTEXT-SPECIFIC SETTINGS
+# ========================================
+
+# Production Context
+[context.production]
+  [context.production.environment]
+    NODE_ENV = "production"
+
+# Deploy Preview Context
+[context.deploy-preview]
+  [context.deploy-preview.environment]
+    NODE_ENV = "development"
+
+# Branch Deploy Context
+[context.branch-deploy]
+  [context.branch-deploy.environment]
+    NODE_ENV = "staging"
+
+# ========================================
+# EDGE FUNCTIONS (Optional)
+# ========================================
+
+# Beispiel: Geo-Location basierte Weiterleitung
+# [[edge_functions]]
+#   function = "geo-redirect"
+#   path = "/"
+
+# ========================================
+# SPLIT TESTING (Optional - Pro Feature)
+# ========================================
+
+# A/B Testing Beispiel
+# [[split_tests]]
+#   name = "New Hero Section"
+#   branches = ["main", "new-hero"]
+#   split = [50, 50]
