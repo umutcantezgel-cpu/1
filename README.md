@@ -1,108 +1,58 @@
-# 🚀 SHK Premium Website
+# 🍽️ Tadim Özyigit – Premium Restaurant Website
 
-Premium-Website für Sanitär, Heizung & Klima Meisterbetrieb mit modernsten Web-Technologien.
+Eine maßgeschneiderte Multi-Page-Website für Tadim Özyigit (Turkish Grill House) in Wetzlar. Die Anwendung vereint erstklassiges Design, Performance und Accessibility nach 24h-Premium-Standard und präsentiert alle wichtigen Inhalte rund um Speisekarte, Reservierungen und Kontakt.
 
-## ✨ Features
-
-- **World-Class Design** - Glassmorphism, Micro-Interactions, Premium-Feel
-- **Performance-Optimiert** - 95+ Lighthouse Score
-- **Accessibility-First** - WCAG AAA Compliance
-- **Responsive** - Mobile-First Design
-- **Modern Stack** - Vite, React, Tailwind CSS
+## ✨ Highlights
+- **6 vollwertige Seiten** – Home, Speisekarte, Über Uns, Galerie, Reservierung, Kontakt
+- **Edles Branding** – Gold (#F4B920), Navy (#1a1f2e) und Warm Brown (#9B6F47) mit Playfair Display & Inter
+- **Komplette Story** – Tradition, Werte, Team, Testimonials & 2.864 Google-Bewertungen
+- **Formulare mit Validierung** – Reservierungs- und Kontaktformular inklusive Erfolgszustand
+- **Responsive & barrierearm** – Optimiert für Mobile/Desktop, semantische Struktur, Fokus-Styles
 
 ## 🛠️ Tech Stack
+- **React 18** mit **Vite 5**
+- **React Router 6** für Multi-Page-Routing
+- **Tailwind CSS 3** mit Custom Design Tokens
+- **Lucide Icons** für hochwertige Piktogramme
 
-- **Framework:** React 18
-- **Build Tool:** Vite 5
-- **Styling:** Tailwind CSS 3
-- **Routing:** React Router 6
-- **Icons:** Lucide React
-- **Deployment:** Netlify
-
-## 📦 Installation
-
+## 🚀 Entwicklung
 ```bash
-# Install dependencies
+# Abhängigkeiten installieren
 npm install
 
-# Start development server
+# Entwicklungsserver starten
 npm run dev
 
-# Build for production
+# Produktion builden
 npm run build
 
-# Preview production build
+# Production-Build lokal prüfen
 npm run preview
 ```
 
-## 🎨 Design System
-
-Das Projekt nutzt ein umfassendes Design-System mit:
-
-- **Design Tokens** - Zentralisierte Farben, Abstände, Animationen
-- **Glassmorphism Components** - 3 Intensitätsstufen
-- **Premium Button** - Mit Ripple & Shine Effects
-- **Custom Hooks** - useIntersectionObserver, useScrollProgress
-- **Animations** - Float, Glow, Shimmer, Slide, Scale
-
-### Komponenten
-
-```jsx
-// Premium Button
-import PremiumButton from '@/components/ui/Button/PremiumButton';
-<PremiumButton variant="primary" size="lg">Click Me</PremiumButton>
-
-// Glass Card
-import GlassCard from '@/components/ui/Card/GlassCard';
-<GlassCard intensity="medium">Content</GlassCard>
-
-// Animated Section
-import AnimatedSection from '@/components/shared/AnimatedSection';
-<AnimatedSection animation="slide-up">Content</AnimatedSection>
-```
-
-## 📁 Projektstruktur
-
+## 📁 Struktur
 ```
 src/
 ├── components/
-│   ├── ui/              # Basis UI-Komponenten
-│   │   ├── Button/
-│   │   └── Card/
-│   ├── shared/          # Geteilte Komponenten
-│   └── features/        # Feature-spezifische Komponenten
-├── hooks/               # Custom React Hooks
-├── pages/               # Route-Komponenten
-├── styles/              # Globale Styles
-└── utils/               # Helper-Funktionen
+│   ├── layout/            # Header, Footer, Layout, Scroll Helpers
+│   ├── shared/            # Animierte Sections
+│   └── ui/                # Buttons & Cards
+├── hooks/                 # Scroll- und Intersection-Hooks
+├── pages/                 # Alle sechs Seiten
+├── styles/                # Globale Styles & Fonts
+└── utils/                 # Helper (falls benötigt)
 ```
 
-## 🚀 Deployment
+## 📐 Design-System
+- **Design Tokens:** Farben, Typografie & Schatten zentral in `tailwind.config.js`
+- **PremiumButton:** Mehrere Varianten (gold, navy, glass, outline) mit Ripple/Shine-Effekt
+- **GlassCard:** Wiederverwendbare Karten mit animierten Overlays & Hover-States
+- **Globale Komponenten:** Sticky Navigation, CTA-Footer, animierte Sektionen
 
-Das Projekt ist für Netlify optimiert:
-
-```bash
-# Mit Netlify CLI
-netlify deploy --prod
-
-# Oder via Git Push (Continuous Deployment)
-git push origin main
-```
-
-## 📊 Performance
-
-Ziel-Metriken:
-
-- ✅ Lighthouse Score: **95+**
-- ✅ First Contentful Paint: **< 1.5s**
-- ✅ Time to Interactive: **< 3s**
-- ✅ Accessibility Score: **95+**
-
-## 📖 Dokumentation
-
-Vollständige Dokumentation in:
-- `IMPLEMENTATION_GUIDE.md` - Detaillierte Implementierungs-Anleitung
+## 📊 Qualitätsziele
+- Lighthouse 95+ in Performance/Accessibility/Best Practices/SEO
+- WCAG 2.1 AA-konforme Kontraste, Tastatursteuerung & Fokus-Stati
+- Ladezeit < 3s dank optimierter Assets & Vite-Build
 
 ## 📄 Lizenz
-
-© 2024 SHK Premium GmbH
+© 2024 Tadim Özyigit – Alle Rechte vorbehalten.

@@ -73,24 +73,23 @@ const PremiumButton = ({
   // ========================================
   const variantClasses = {
     primary: `
-      bg-gradient-to-r from-brand-orange-500 to-brand-orange-600
-      text-white font-semibold
-      shadow-lg shadow-brand-orange-500/50
-      hover:shadow-2xl hover:shadow-brand-orange-500/60
-      hover:from-brand-orange-600 hover:to-brand-orange-700
+      bg-gradient-to-r from-brand-gold-400 to-brand-gold-600
+      text-brand-navy-900 font-semibold
+      shadow-lg shadow-[0_18px_40px_rgba(244,185,32,0.35)]
+      hover:shadow-glow-gold hover:from-brand-gold-500 hover:to-brand-gold-700
       active:scale-95
       before:absolute before:inset-0
-      before:bg-gradient-to-r before:from-brand-orange-400 before:to-brand-orange-500
+      before:bg-gradient-to-r before:from-brand-gold-200 before:to-brand-gold-400
       before:opacity-0 before:transition-opacity before:duration-300
-      hover:before:opacity-100
+      hover:before:opacity-60
       disabled:from-gray-400 disabled:to-gray-500
       disabled:shadow-none disabled:cursor-not-allowed
     `,
     secondary: `
       bg-gradient-secondary
       text-white font-semibold
-      shadow-lg shadow-blue-500/50
-      hover:shadow-2xl hover:shadow-blue-500/60
+      shadow-lg shadow-[0_18px_40px_rgba(10,12,20,0.45)]
+      hover:shadow-2xl hover:shadow-[0_25px_45px_rgba(10,12,20,0.55)]
       active:scale-95
       disabled:opacity-50 disabled:cursor-not-allowed
     `,
@@ -103,10 +102,10 @@ const PremiumButton = ({
     `,
     outline: `
       bg-transparent
-      border-2 border-brand-orange-500
-      text-brand-orange-500 font-semibold
-      hover:bg-brand-orange-500 hover:text-white
-      hover:shadow-lg hover:shadow-brand-orange-500/30
+      border-2 border-brand-gold-400
+      text-brand-gold-400 font-semibold
+      hover:bg-brand-gold-400 hover:text-brand-navy-900
+      hover:shadow-lg hover:shadow-brand-gold-500/30
       active:scale-95
       disabled:opacity-50 disabled:cursor-not-allowed disabled:border-gray-400
     `,
@@ -132,7 +131,7 @@ const PremiumButton = ({
     overflow-hidden
     transition-all duration-300 ease-out
     transform
-    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange-500 focus-visible:ring-offset-2
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold-500 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy-900
     ${fullWidth ? 'w-full' : ''}
     ${disabled || loading ? 'pointer-events-none' : 'cursor-pointer'}
   `;
