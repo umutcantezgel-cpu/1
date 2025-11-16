@@ -7,143 +7,105 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      // ========================================
-      // DESIGN TOKENS - Single Source of Truth
-      // ========================================
       colors: {
         brand: {
-          // Orange Palette (Primary)
-          orange: {
-            50: '#fff7ed',
-            100: '#ffedd5',
-            200: '#fed7aa',
-            300: '#fdba74',
-            400: '#fb923c',
-            500: '#ff6b35', // Primary Brand Color
-            600: '#f15a24',
-            700: '#d94d1a',
-            800: '#c44217',
-            900: '#9a3412',
+          gold: {
+            50: '#fffbea',
+            100: '#fef0c3',
+            200: '#fde08f',
+            300: '#f9cd57',
+            400: '#f7bd32',
+            500: '#F4B920',
+            600: '#d89c11',
+            700: '#b1790c',
+            800: '#8a5a0c',
+            900: '#5f3c08',
           },
-          // Blue Palette (Secondary)
-          blue: {
-            50: '#eff6ff',
-            100: '#dbeafe',
-            200: '#bfdbfe',
-            300: '#93c5fd',
-            400: '#60a5fa',
-            500: '#3b82f6',
-            600: '#2563eb',
-            700: '#1d4ed8',
-            800: '#1e40af',
-            900: '#1e3a8a', // Primary Dark
-            950: '#0f172a',
+          navy: {
+            50: '#f5f7fb',
+            100: '#e6e8f1',
+            200: '#c3c8d8',
+            300: '#9ea5bc',
+            400: '#68718e',
+            500: '#414a67',
+            600: '#2f354d',
+            700: '#242a3f',
+            800: '#1d2234',
+            900: '#1a1f2e',
+            950: '#0d101a',
           },
-          // Purple Palette (Accent)
-          purple: {
-            500: '#8b5cf6',
-            600: '#7c3aed',
-            700: '#6d28d9',
-            900: '#581c87',
+          brown: {
+            50: '#f9f3ed',
+            100: '#efdfd0',
+            200: '#e0c1a1',
+            300: '#d1a273',
+            400: '#c2884f',
+            500: '#9B6F47',
+            600: '#82593a',
+            700: '#68442d',
+            800: '#4f3121',
+            900: '#311f13',
           },
+          cream: '#fffdf6',
+          sand: '#f7f1e7',
         },
       },
-
-      // ========================================
-      // SPACING SYSTEM (4px base grid)
-      // ========================================
       spacing: {
-        '18': '4.5rem',   // 72px
-        '88': '22rem',    // 352px
-        '100': '25rem',   // 400px
-        '128': '32rem',   // 512px
+        '18': '4.5rem',
+        '88': '22rem',
+        '100': '25rem',
+        '128': '32rem',
       },
-
-      // ========================================
-      // TYPOGRAPHY SCALE mit optimierten Line Heights
-      // ========================================
       fontSize: {
-        'xs': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.05em' }],
-        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-        'base': ['1rem', { lineHeight: '1.5rem' }],
+        'xs': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.02em' }],
+        'sm': ['0.875rem', { lineHeight: '1.3rem' }],
+        'base': ['1rem', { lineHeight: '1.6rem' }],
         'lg': ['1.125rem', { lineHeight: '1.75rem' }],
-        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        'xl': ['1.25rem', { lineHeight: '1.85rem' }],
         '2xl': ['1.5rem', { lineHeight: '2rem' }],
         '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
         '4xl': ['2.25rem', { lineHeight: '2.5rem', letterSpacing: '-0.02em' }],
-        '5xl': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        '5xl': ['3rem', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
         '6xl': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.03em' }],
         '7xl': ['4.5rem', { lineHeight: '1.05', letterSpacing: '-0.03em' }],
         '8xl': ['6rem', { lineHeight: '1', letterSpacing: '-0.04em' }],
       },
-
-      // ========================================
-      // FONT FAMILIES
-      // ========================================
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['"Playfair Display"', 'serif'],
       },
-
-      // ========================================
-      // BACKDROP BLUR (für Glassmorphism)
-      // ========================================
       backdropBlur: {
         xs: '2px',
         '3xl': '64px',
       },
-
-      // ========================================
-      // ANIMATION SYSTEM
-      // ========================================
       animation: {
-        // Floating animations
         'float': 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out 1s infinite',
-
-        // Glow effects
         'glow': 'glow 2s ease-in-out infinite alternate',
         'glow-pulse': 'glowPulse 3s ease-in-out infinite',
-
-        // Entrance animations
         'slide-up': 'slideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
         'slide-down': 'slideDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
         'slide-left': 'slideLeft 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
         'slide-right': 'slideRight 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
         'scale-in': 'scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
         'fade-in': 'fadeIn 0.5s ease-out',
-
-        // Shimmer effect
         'shimmer': 'shimmer 2.5s linear infinite',
-
-        // Slow animations
         'spin-slow': 'spin 8s linear infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-
-        // Bounce variations
         'bounce-slow': 'bounce 2s infinite',
       },
-
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          'from': {
-            boxShadow: '0 0 20px rgba(255, 107, 53, 0.5), 0 0 40px rgba(255, 107, 53, 0.3)'
-          },
-          'to': {
-            boxShadow: '0 0 30px rgba(255, 107, 53, 0.8), 0 0 60px rgba(255, 107, 53, 0.5)'
-          },
+          'from': { boxShadow: '0 0 20px rgba(244, 185, 32, 0.35), 0 0 40px rgba(244, 185, 32, 0.2)' },
+          'to': { boxShadow: '0 0 32px rgba(244, 185, 32, 0.55), 0 0 60px rgba(244, 185, 32, 0.25)' },
         },
         glowPulse: {
-          '0%, 100%': {
-            boxShadow: '0 0 20px rgba(255, 107, 53, 0.4)'
-          },
-          '50%': {
-            boxShadow: '0 0 40px rgba(255, 107, 53, 0.8), 0 0 60px rgba(255, 107, 53, 0.4)'
-          },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(244, 185, 32, 0.35)' },
+          '50%': { boxShadow: '0 0 40px rgba(244, 185, 32, 0.6), 0 0 60px rgba(244, 185, 32, 0.35)' },
         },
         slideUp: {
           'from': { transform: 'translateY(40px)', opacity: '0' },
@@ -174,38 +136,18 @@ module.exports = {
           'to': { backgroundPosition: '-200% center' },
         },
       },
-
-      // ========================================
-      // BOX SHADOWS (inkl. Glassmorphism)
-      // ========================================
       boxShadow: {
-        // Glassmorphism Shadows
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
-        'glass-lg': '0 8px 32px 0 rgba(31, 38, 135, 0.25), inset 0 1px 0 0 rgba(255, 255, 255, 0.15)',
-        'glass-xl': '0 12px 48px 0 rgba(31, 38, 135, 0.35), inset 0 2px 0 0 rgba(255, 255, 255, 0.2)',
-
-        // Glow Shadows
-        'glow-orange': '0 0 20px rgba(255, 107, 53, 0.5)',
-        'glow-orange-lg': '0 0 30px rgba(255, 107, 53, 0.6), 0 0 60px rgba(255, 107, 53, 0.3)',
-        'glow-blue': '0 0 20px rgba(59, 130, 246, 0.5)',
-
-        // Elevated Shadows
-        'elevated': '0 20px 60px -15px rgba(0, 0, 0, 0.3)',
-        'elevated-lg': '0 25px 80px -20px rgba(0, 0, 0, 0.4)',
+        'glass': '0 8px 32px 0 rgba(10, 12, 20, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.08)',
+        'glass-lg': '0 12px 48px 0 rgba(10, 12, 20, 0.25), inset 0 2px 0 0 rgba(255, 255, 255, 0.1)',
+        'glass-xl': '0 16px 60px 0 rgba(10, 12, 20, 0.3), inset 0 2px 0 0 rgba(255, 255, 255, 0.15)',
+        'glow-gold': '0 0 22px rgba(244, 185, 32, 0.5)',
+        'elevated': '0 24px 80px -20px rgba(15, 18, 30, 0.45)',
       },
-
-      // ========================================
-      // BORDER RADIUS
-      // ========================================
       borderRadius: {
         '4xl': '2rem',
         '5xl': '2.5rem',
         '6xl': '3rem',
       },
-
-      // ========================================
-      // Z-INDEX SYSTEM
-      // ========================================
       zIndex: {
         '60': '60',
         '70': '70',
@@ -213,86 +155,60 @@ module.exports = {
         '90': '90',
         '100': '100',
       },
-
-      // ========================================
-      // TRANSITIONS
-      // ========================================
       transitionTimingFunction: {
         'bounce-in': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
     },
   },
-
   plugins: [
-    require('@tailwindcss/forms'),
-
-    // ========================================
-    // CUSTOM PLUGIN für wiederverwendbare Komponenten
-    // ========================================
     function({ addComponents, theme }) {
       addComponents({
-        // GLASSMORPHISM CARDS
         '.glass-card': {
-          backgroundColor: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
+          backgroundColor: 'rgba(26, 31, 46, 0.65)',
+          backdropFilter: 'blur(18px)',
+          WebkitBackdropFilter: 'blur(18px)',
           borderWidth: '1px',
-          borderColor: 'rgba(255, 255, 255, 0.2)',
+          borderColor: 'rgba(255, 255, 255, 0.15)',
           boxShadow: theme('boxShadow.glass'),
         },
         '.glass-card-md': {
-          backgroundColor: 'rgba(255, 255, 255, 0.15)',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
+          backgroundColor: 'rgba(33, 42, 64, 0.75)',
+          backdropFilter: 'blur(22px)',
+          WebkitBackdropFilter: 'blur(22px)',
           borderWidth: '1px',
-          borderColor: 'rgba(255, 255, 255, 0.3)',
+          borderColor: 'rgba(255, 255, 255, 0.18)',
           boxShadow: theme('boxShadow.glass-lg'),
         },
         '.glass-card-lg': {
-          backgroundColor: 'rgba(255, 255, 255, 0.2)',
-          backdropFilter: 'blur(32px)',
-          WebkitBackdropFilter: 'blur(32px)',
+          backgroundColor: 'rgba(33, 42, 64, 0.85)',
+          backdropFilter: 'blur(30px)',
+          WebkitBackdropFilter: 'blur(30px)',
           borderWidth: '1px',
-          borderColor: 'rgba(255, 255, 255, 0.4)',
+          borderColor: 'rgba(255, 255, 255, 0.25)',
           boxShadow: theme('boxShadow.glass-xl'),
         },
-
-        // GRADIENT BACKGROUNDS
         '.bg-gradient-primary': {
-          backgroundImage: 'linear-gradient(135deg, #ff6b35 0%, #f15a24 100%)',
+          backgroundImage: 'linear-gradient(135deg, #F4B920 0%, #d89c11 100%)',
         },
         '.bg-gradient-secondary': {
-          backgroundImage: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
+          backgroundImage: 'linear-gradient(135deg, #1a1f2e 0%, #2f354d 100%)',
         },
         '.bg-gradient-hero': {
-          backgroundImage: 'linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(67, 56, 202, 0.9) 50%, rgba(139, 92, 246, 0.95) 100%)',
+          backgroundImage: 'linear-gradient(135deg, rgba(10, 12, 20, 0.95) 0%, rgba(33, 42, 64, 0.92) 40%, rgba(155, 111, 71, 0.85) 100%)',
         },
-
-        // TEXT GRADIENTS
-        '.text-gradient-orange': {
-          backgroundImage: 'linear-gradient(135deg, #ff6b35 0%, #f15a24 100%)',
+        '.text-gradient-gold': {
+          backgroundImage: 'linear-gradient(135deg, #fceab2 0%, #F4B920 40%, #d89c11 100%)',
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           color: 'transparent',
         },
-        '.text-gradient-blue': {
-          backgroundImage: 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)',
-          backgroundClip: 'text',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          color: 'transparent',
-        },
-
-        // SHIMMER EFFECT
         '.shimmer': {
-          backgroundImage: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
+          backgroundImage: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)',
           backgroundSize: '200% 100%',
           animation: 'shimmer 2.5s linear infinite',
         },
-
-        // SCREEN READER ONLY
         '.sr-only': {
           position: 'absolute',
           width: '1px',
@@ -304,12 +220,10 @@ module.exports = {
           whiteSpace: 'nowrap',
           borderWidth: '0',
         },
-
-        // FOCUS VISIBLE STYLES (Accessibility)
         '.focus-ring': {
           '&:focus-visible': {
             outline: '2px solid',
-            outlineColor: theme('colors.brand.orange.500'),
+            outlineColor: theme('colors.brand.gold.500'),
             outlineOffset: '2px',
             borderRadius: theme('borderRadius.lg'),
           },
